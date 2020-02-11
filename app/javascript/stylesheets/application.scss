@@ -1,0 +1,32 @@
+@import "~bootstrap/scss/bootstrap";
+
+/* --------------------------------
+ * base
+ * -------------------------------- */
+body {
+  background-color: lightgray;
+}
+
+/* --------------------------------
+ * header
+ * -------------------------------- */
+.jumbotron-extend {
+  height: 700px;
+  max-width: 100%;
+  background-image: url("../images/top.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  p,
+  h1 {
+    text-align: center;
+    color: white;
+  }
+  h1 {
+    font-size: 120px;
+    letter-spacing: 5px;
+  }
+  p {
+    font-size: large;
+    letter-spacing: 3px;
+  }
+}
