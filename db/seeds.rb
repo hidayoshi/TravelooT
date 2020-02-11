@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -7,11 +9,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 3.times do |n|
-    email = "user#{n+1}@user.com"
-    password = "password"
-    User.create!(
-      email: email,
-      password: password,
-      password_confirmation: password
-    )
-  end
+  email = "user#{n + 1}@user.com"
+  password = 'password'
+  User.create!(
+    email: email,
+    password: password,
+    password_confirmation: password
+  )
+end
+
+3.times do |_n|
+  Micropost.create!(
+    description: Faker::Lorem.paragraph(2),
+    image: 'aaa'
+  )
+end
