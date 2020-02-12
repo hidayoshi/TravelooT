@@ -26,6 +26,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'devise'
+gem 'simple_form'
+gem 'carrierwave'
+gem 'rubocop', require: false
+
 
 
 # Reduces boot times through caching; required in config/boot.rb

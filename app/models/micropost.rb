@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
 class Micropost < ApplicationRecord
-    validates :description, presence: true
+  belongs_to :user
+  validates :description, presence: true
+  mount_uploader :image, ImageUploader
 end

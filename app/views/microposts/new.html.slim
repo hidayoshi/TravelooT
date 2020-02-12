@@ -1,0 +1,8 @@
+h2.center
+    |新規商品の追加
+.container
+  = simple_form_for @micropost do |f|
+    = f.input :description, class: "form-control"
+    = f.input :image, as: :file, input_html: {accept: (@micropost.image.accept_extensions)}
+    .mt-20
+      = f.button :submit, class: "btn btn-primary"
