@@ -8,19 +8,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-3.times do |n|
+4.times do |n|
   email = "user#{n + 1}@user.com"
   password = 'password'
-  User.create!(
+  user = User.new(
     email: email,
     password: password,
     password_confirmation: password
   )
+  user.skip_confirmation!
+  user.save!
 end
 
-3.times do |_n|
-  Micropost.create!(
-    description: Faker::Lorem.paragraph(2),
-    image: 'aaa'
-  )
+users = User.order(:created_at).take(2)
+3.times do
+  description = Faker::Lorem.sentence(5)
+  image = 'aaa'
+  users.each { |user| user.microposts.create!(description: description, image: image) }
 end
