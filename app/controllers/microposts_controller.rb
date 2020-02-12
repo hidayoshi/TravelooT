@@ -17,7 +17,7 @@ class MicropostsController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = 'Something went wrong'
-      render 'new'
+      render 'microposts/new'
     end
   end
 
