@@ -8,6 +8,16 @@ body {
 }
 
 /* --------------------------------
+ * bootstrap
+ * -------------------------------- */
+.card-img-top {
+  width: 100%;
+  max-height: 1080px;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+  // object-fit: cover;
+}
+/* --------------------------------
  * header
  * -------------------------------- */
 .jumbotron-extend {
@@ -29,4 +39,9 @@ body {
     font-size: large;
     letter-spacing: 3px;
   }
+}
+
+.card-img-height {
+  display: inline-block;
+  height: 100%;
 }
