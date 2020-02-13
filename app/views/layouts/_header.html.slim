@@ -7,10 +7,10 @@ header.navbar.navbar-expand-md.navbar-dark.bg-dark
         - if current_user.present?
           li.nav-item
             = link_to "New post", new_micropost_path, class: "nav-link"
-          / li.nav-item
-            = link_to "Profile", current_user, class: "nav-link"
-          / li.nav-item
-            = link_to "Settings", edit_user_path(current_user), class: "nav-link"
+          li.nav-item
+            = link_to "Profile", "#", class: "nav-link"
+          li.nav-item
+            = link_to "Settings", edit_user_registration_path, class: "nav-link"
           li.nav-item
             = link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link"
         - else
