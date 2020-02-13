@@ -1,8 +1,13 @@
-h2.center
-    |新規商品の追加
-.container
+h2.text-center.mt-5
+    | New Post
+.container.mt-5
   = simple_form_for @micropost do |f|
-    = f.input :description, class: "form-control"
-    = f.input :image, as: :file, input_html: {accept: (@micropost.image.accept_extensions)}
-    .mt-20
-      = f.button :submit, class: "btn btn-primary"
+    = f.input :image, as: :file,
+              input_html: {accept: (@micropost.image.accept_extensions)},
+              class: "text-center",
+              label: false
+    = f.input :description, class: "form-control",
+                            label: false,
+                            placeholder: "What's this tool?"
+    .text-center.mt-3
+      = f.button :submit, class: "btn btn-primary", value: "Post"
