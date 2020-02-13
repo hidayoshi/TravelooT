@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2020_02_12_094101) do
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "micropost_id"
+    t.integer "user_id", null: false
+    t.integer "micropost_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["micropost_id"], name: "index_likes_on_micropost_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_094101) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

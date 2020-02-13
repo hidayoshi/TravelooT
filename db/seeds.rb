@@ -9,9 +9,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 4.times do |n|
+  name = "name#{n + 1}"
   email = "user#{n + 1}@user.com"
   password = 'password'
   user = User.new(
+    name: name,
     email: email,
     password: password,
     password_confirmation: password
@@ -23,6 +25,5 @@ end
 users = User.order(:created_at).take(2)
 3.times do
   description = Faker::Lorem.sentence(5)
-  image = 'aaa'
-  users.each { |user| user.microposts.create!(description: description, image: image) }
+  users.each { |user| user.microposts.create!(description: description, image: open('#{Rails.root}/public/uploads/micropost/image/example.jpg')) }
 end
