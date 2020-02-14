@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MicropostsController < ApplicationController
-  #   before_action :authenticate_user
+  before_action :authenticate_user!, only: %i[new create]
   def index
     @microposts = Micropost.all
   end

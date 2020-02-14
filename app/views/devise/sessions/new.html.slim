@@ -1,4 +1,6 @@
-.container.mx-auto.mt-5.form
+.mx-auto.mt-5.form.container
+  h2.text-center
+    | Log in
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .form-inputs
             = f.input :email,
