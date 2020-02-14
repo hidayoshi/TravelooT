@@ -10,6 +10,7 @@ require("channels");
 
 import "bootstrap";
 import "../stylesheets/application";
+import "@fortawesome/fontawesome-free/js/all";
 
 // require.context("../images", true, /\.(png|jpg|jpeg|svg)$/);
 
