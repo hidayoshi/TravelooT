@@ -1,0 +1,12 @@
+
+                / = image_tag(product.image.url || "/app/assets/images/sample.jpg")
+                a.card-title.border-bottom.p-2
+                    = micropost.user.name
+                - if micropost.image.present?
+                    a.card-img-height
+                        = image_tag micropost.image_url, class: "card-img-top"
+                .border-top.p-2
+                    p.card-text
+                        span id="micropost-#{micropost.id}"
+                            = render "likes/like", micropost: micropost
+                        = micropost.description

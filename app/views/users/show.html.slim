@@ -1,7 +1,8 @@
-= render  "layouts/jumbotron"
-
+h2.text-center.mt-3
+    = @user.name
+    |    Profile
 .row
     - @microposts.each do |micropost|
-        .col-sm-12.col-md-6
+        .col-sm-12.col-md-6.offset-md-3
             .card.m-3
                 = render 'microposts/micropost', micropost: micropost
