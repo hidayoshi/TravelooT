@@ -1,4 +1,7 @@
 = render  "layouts/jumbotron"
+- @all_ranks.each do |rank|
+    p
+        = rank.description
 
 .row
     - @microposts.each do |micropost|
