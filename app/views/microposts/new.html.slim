@@ -1,13 +1,14 @@
-h2.text-center.mt-5
-    | New Post
-.container.mt-5
-  = simple_form_for @micropost do |f|
-    = f.input :image, as: :file,
-              input_html: {accept: (@micropost.image.accept_extensions)},
-              class: "text-center",
-              label: false
-    = f.input :description, class: "form-control",
-                            label: false,
-                            placeholder: "What's this tool?"
-    .text-center.mt-3
-      = f.button :submit, class: "btn btn-primary", value: "Post"
+.form.mx-auto.mt-5.container
+  h2.text-center
+      | New Post
+  .container.mt-5
+    = simple_form_for @micropost do |f|
+      = f.input :image, as: :file,
+                input_html: {accept: (@micropost.image.accept_extensions)},
+                class: "text-center",
+                label: false
+      = f.input :description, class: "form-control",
+                              label: false,
+                              placeholder: "What's this tool?"
+      .text-center.mt-3
+        = f.button :submit, class: "btn btn-primary", value: "Post"
