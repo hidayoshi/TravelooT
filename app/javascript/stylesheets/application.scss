@@ -7,6 +7,14 @@ body {
   background-color: lightgray;
 }
 
+.center {
+  text-align: center;
+}
+
+h2 {
+  background-color: yellow;
+}
+
 /* --------------------------------
  * bootstrap
  * -------------------------------- */
@@ -44,4 +52,15 @@ body {
 .card-img-height {
   display: inline-block;
   height: 100%;
+}
+
+/* --------------------------------
+ * practice
+ * -------------------------------- */
+.form {
+  padding: 32px;
+  border-radius: 16px;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 4px #eae6dc;
+  box-shadow: 0 0 4px #eae6dc;
 }
