@@ -1,7 +1,7 @@
 
                 / = image_tag(product.image.url || "/app/assets/images/sample.jpg")
-                a.card-title.border-bottom.p-2
-                    = micropost.user.name
+                a.card-title.border-bottom
+                    = link_to micropost.user.name, user_path(micropost.user)
                 - if micropost.image.present?
                     a.card-img-height
                         = image_tag micropost.image_url, class: "card-img-top"
