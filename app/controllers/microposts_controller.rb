@@ -4,7 +4,7 @@ class MicropostsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
   def index
     @microposts = Micropost.all
-    @all_ranks = Micropost.find(Like.group(:micropost_id).order('count(micropost_id) desc').limit(3).pluck(:micropost_id)).reverse
+    @all_ranks = Micropost.find(Like.group(:micropost_id).order('count(micropost_id) desc').limit(4).pluck(:micropost_id)).reverse
   end
 
   def new

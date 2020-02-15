@@ -8,7 +8,7 @@ header.navbar.navbar-expand-md.navbar-white.bg-white
           li.nav-item
             = link_to "New post", new_micropost_path, class: "nav-link"
           li.nav-item
-            = link_to current_user.name, user_path(current_user), class: "nav-link"
+            = link_to "My page", user_path(current_user), class: "nav-link"
           li.nav-item
             = link_to "Settings", edit_user_registration_path, class: "nav-link"
           li.nav-item
