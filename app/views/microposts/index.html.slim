@@ -12,6 +12,10 @@ h2.text-center
                     p.card-text
                         span id="rank-#{rank.id}"
                             = render "likes/like", micropost: rank
+                        button[data-target="#collapse-coment-#{rank.id}" data-toggle="collapse" aria-expanded="false" type="button"]
+                            | read more
+                        div[id="collapse-coment-#{rank.id}" class="collapse"]
+                            = rank.description
 
 h2.text-center.mt-5
     | - New Post -
