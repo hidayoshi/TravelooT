@@ -7,5 +7,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   has_many :microposts, dependent: :destroy
-  belongs_to :admin
 end
