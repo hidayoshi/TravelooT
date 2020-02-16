@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   root 'microposts#index'
 
   resources :users, only: [:show]
-  resources :microposts, only: %i[new create]
+  resources :microposts, only: %i[new create destroy]
   resources :likes, only: %i[create destroy]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

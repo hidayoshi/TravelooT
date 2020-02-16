@@ -1,6 +1,11 @@
 
 / = image_tag(product.image.url || "/app/assets/images/sample.jpg")
-= link_to micropost.user.name, user_path(micropost.user), class: "card-header p-2"
+.card-header.d-flex.justify-content-between
+    = link_to micropost.user.name, user_path(micropost.user)
+    .d-inline-block
+        - if current_user == micropost.user
+            = link_to  "delete", micropost_path(micropost.id), method: :delete, data: { confirm: "You sure?" }
+
 - if micropost.image.present?
     = image_tag micropost.image_url, class: "card-img-top"
 .border-top.p-2

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MicropostsController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create]
+  before_action :authenticate_user!, only: %i[new create destroy]
   def index
     @microposts = Micropost.all
     @all_ranks = Micropost.find(Like.group(:micropost_id).order('count(micropost_id) desc').limit(4).pluck(:micropost_id)).reverse
@@ -20,6 +20,13 @@ class MicropostsController < ApplicationController
       flash[:error] = 'Something went wrong'
       render 'microposts/new'
     end
+  end
+
+  def destroy
+    @micropost = Micropost.find(params[:id])
+    @micropost.destroy
+    flash[:success] = 'Micropost deleted'
+    redirect_to request.referer || root_url
   end
 
   private

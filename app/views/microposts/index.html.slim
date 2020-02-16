@@ -5,7 +5,12 @@ h2.text-center
 .card-deck
     - @all_ranks.each do |rank|
             .card.m-4
-                = link_to rank.user.name, user_path(rank.user), class: "card-header p-2"
+                .card-header.d-flex.justify-content-between
+                    = link_to rank.user.name, user_path(rank.user)
+                    .d-inline-block
+                        - if current_user == rank.user
+                            = link_to  "delete", micropost_path(rank.id), method: :delete, data: { confirm: "You sure?" }
+
                 - if rank.image.present?
                     = image_tag rank.image_url, class: "card-img-top", height: "300"
                 .border-top.p-2
