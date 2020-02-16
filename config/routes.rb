@@ -1,18 +1,19 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'admins/index'
   get 'users/show'
   devise_for :admins
   devise_for :users
   # , controllers: {
   #   sessions: 'users/sessions',
   #   confirmations: 'users/confirmations',
-  #   registrations: 'users/registrations',
+  # registrations: 'users/registrations'
   #   passwords: 'users/passwords'
   # }
   root 'microposts#index'
 
-  resources :users, only: [:show]
+  resources :users, only: %i[index show]
   resources :microposts, only: %i[new create destroy]
   resources :likes, only: %i[create destroy]
 

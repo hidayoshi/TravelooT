@@ -1,0 +1,18 @@
+table.table
+    thead
+        tr
+            th[scope="col"] | ID
+            th[scope="col"] | name
+            th[scope="col"] | date
+            / th[scope="col"] | delete
+    tbody
+        - @users.each do |user|
+            tr
+                th[scope="row"]
+                    = user.id
+                td
+                    = link_to user.name, user_path(user)
+                td
+                    = user.created_at
+                / td
+                    = link_to "Delete", registration_path(user), data: { confirm: "Are you sure?" }, method: :delete
