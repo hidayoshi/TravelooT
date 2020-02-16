@@ -28,6 +28,7 @@ gem 'html2slim'
 gem 'devise'
 gem 'simple_form'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'rubocop', require: false
 
 
