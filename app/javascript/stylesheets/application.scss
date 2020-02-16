@@ -41,6 +41,17 @@ body {
   }
 }
 
+.flash {
+  color: black;
+  text-align: center;
+  &_alert {
+    background-color: red;
+  }
+  &_notice {
+    background-color: blue;
+  }
+}
+
 /* --------------------------------
  * practice
  * -------------------------------- */
