@@ -22,6 +22,15 @@
   user.save!
 end
 
+user = User.new(
+  name: 'portfolio',
+  email: 'portfolio@portfolio.com',
+  password: 'portfolio',
+  password_confirmation: 'portfolio'
+)
+user.skip_confirmation!
+user.save!
+
 users = User.order(:created_at).take(4)
 3.times do
   description = Faker::Lorem.sentence(5)
@@ -35,7 +44,7 @@ end
 
 microposts = Micropost.all
 user = User.first
-microposts.each { |micropost| micropost.like(user, micropost.id)}
+microposts.each { |micropost| micropost.like(user, micropost.id) }
 # users = User.all
 # like_users = users[2..7]
 # like_users.each { |user| user.}
