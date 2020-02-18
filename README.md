@@ -1,24 +1,30 @@
-# README
+# TravelooT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーションの概要
 
-Things you may want to cover:
+旅人が自分の旅行道具を紹介するSNSライクなサービスです。
 
-* Ruby version
+ログインには  
+email: portfolio@portfolio.com  
+password: portfolio  
+をお使いください。
 
-* System dependencies
+[https://traveloot.herokuapp.com/](https://traveloot.herokuapp.com/)
 
-* Configuration
+## アプリケーションの機能一覧
 
-* Database creation
+* 記事のCD機能
+* ユーザーのCRUD機能
+* 管理ユーザログイン機能
+* 画像ファイルのアップロード機能
+* いいね機能
+* 人気投稿のランキング
 
-* Database initialization
+## アプリケーション内で使用している技術一覧
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* バックエンドーRuby2.7, Rails6.0.2
+* フロントエンドーBootstrap
+* データベースーMySQL
+* デプロイーHeroku
+* 画像アップロードーcarrierwave,S3
+* ログイン機能ーdevise
