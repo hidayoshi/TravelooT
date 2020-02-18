@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class MicropostsController < ApplicationController
+  protect_from_forgery with: :exception
   before_action :authenticate_user!, only: %i[new create destroy]
 
   def index
